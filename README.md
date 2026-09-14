@@ -7,7 +7,6 @@ SCIA（セカンドキャリア・インキュベーション協会）の講座�
 | ツール | 用途 | URL | 作成者 |
 |---|---|---|---|
 | Next Journey Map | Hatchフェーズ：Identity / WHAT / HEART / MESSAGE / VOICE を整理し、変遷を記録 | https://kanbeylab.github.io/scia-tools/hatch-next-journey-map/ | 向山 |
-
 | Life Line Chart | Hatchフェーズ：価値観をレンズに人生の山と谷を可視化。1on1の素材 | https://kanbeylab.github.io/scia-tools/hatch-lifeline-chart/ | 向山 |
 
 ## ルール（重要）
