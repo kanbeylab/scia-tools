@@ -70,19 +70,18 @@ textarea{resize:vertical;min-height:80px;line-height:1.6}
 <header><div class="brand"><div class="mark"></div><div><h1>SCIA HATCH｜Next Journey Map</h1><div class="sub">何ができる人か ＝ 何を解決する人か。視る場所を決めて、自分の名前で社会資本をつくる。</div></div></div></header>
 <main>
 <div class="toolbar">
-<label class="filelabel ai" for="aiLoad">AIの整理結果を読み込む</label><input id="aiLoad" type="file" accept=".txt,.json">
 <button class="primary" id="snapshot">この時点を記録</button><button id="image">画像として保存</button><button id="pdf">PDFで保存・印刷</button><button id="save">編集データを保存</button>
 <label class="filelabel" for="load">過去データを読み込む</label><input id="load" type="file" accept=".txt,.json"><span id="status" class="status"></span>
 </div>
-<div class="helper">上から順に埋めます。実績から考え始めないこと——ポジショニングが実績を創ります。AIの整理結果は材料であって完成版ではありません。本人の言葉に書き換えてから「この時点を記録」でSnapshotを残してください。1on1の最後に「編集データを保存」を必ず押すこと（ブラウザには何も残りません）。</div>
+<div class="helper"><b>使い方</b>：① Life Line Chartを見ながらの1on1で出てきた言葉を「視る場所」に書く → ② 講義で学んだことをもとに、一番の課題・解決策・Identity Statementを自分で埋めていく → ③ 変わったら「この時点を記録」で版を残す。上から順に。実績から考え始めないこと——ポジショニングが実績を創ります。1on1の最後に「編集データを保存」を必ず押すこと（ブラウザには何も残らず、ファイルだけが記録です）。</div>
 
 <section class="panel metaPanel"><div class="meta"><div><div class="label">名前</div><input id="name"></div><div><div class="label">現在の肩書き・役割（任意）</div><input id="role"></div></div></section>
 
-<section class="panel"><div class="sourcebar"><div><span id="sourceBadge" class="badge">Working Map</span> <span id="sourceText" class="note">まだAI Draftは読み込まれていません。</span></div><span id="generatedAt" class="note"></span></div>
+<section class="panel"><div class="sourcebar"><div><span id="sourceBadge" class="badge">Working Map</span> <span id="sourceText" class="note">本人の言葉で書く。AIの文章を貼らない。</span></div><span id="generatedAt" class="note"></span></div>
 <div id="capture" class="map">
 <div class="maphead"><h2>Next Journey Map</h2><div class="sub">HATCH → NETWORK ｜ 視る場所 → 一番の課題 → 解決策 → 私は何を解決する人か → 裏付け → ヘッドライン</div></div>
 
-<div class="step"><div class="k">視る場所<small>何にイラっとするか。何を見るともやっとするか。この感覚が、あなた独自の視点。</small></div><textarea id="irritation" placeholder="例：現場からの改善提案が、会議で「前例がない」の一言で消えるのを見るともやっとする"></textarea></div>
+<div class="step"><div class="k">視る場所<small>Life Line Chartの1on1で出てきた言葉から。何にイラっとするか、何を見るともやっとするか。この感覚が、あなた独自の視点。</small></div><textarea id="irritation" placeholder="例：現場からの改善提案が、会議で「前例がない」の一言で消えるのを見るともやっとする"></textarea></div>
 
 <div class="step"><div class="k">一番の課題<small>同じ景色でも、どこを視るかで「一番の課題」は変わる。誰の、どんな課題か。</small></div><div class="two"><div><div class="label">誰の課題か（対象）</div><input id="who" placeholder="例：中小製造業の2代目・3代目経営者"></div><div><div class="label">一番の課題は何か</div><textarea id="problem" placeholder="例：現場の「困りごと」を経営判断の言葉に翻訳できる人が社内にいないこと"></textarea></div></div></div>
 
@@ -139,7 +138,6 @@ function normalizeDraft(raw){
 }
 function parseJSONFromText(text){let t=text.trim().replace(/^```(?:json)?\s*/i,"").replace(/\s*```$/,"");try{return JSON.parse(t)}catch(e){}const start=t.indexOf("{"),end=t.lastIndexOf("}");if(start>=0&&end>start)return JSON.parse(t.slice(start,end+1));throw new Error("JSON not found")}
 
-$("aiLoad").onchange=async e=>{try{const raw=parseJSONFromText(await e.target.files[0].text());apply(normalizeDraft(raw));S.source=raw.source||raw.draftType||"AI Draft";S.generatedAt=raw.generatedAt||raw.createdAt||raw.savedAt||"";$("sourceBadge").textContent="AI Draft";$("sourceText").textContent="AIが整理した候補を読み込みました。本人の言葉に直していきましょう。";$("generatedAt").textContent=S.generatedAt?("Generated｜"+new Date(S.generatedAt).toLocaleString("ja-JP")):"";$("stampLine").textContent="AI Draft";$("status").textContent="AIの整理結果を読み込みました。"}catch(x){alert("AIの整理結果を読み込めませんでした。")}e.target.value=""};
 
 $("snapshot").onclick=()=>{let t=new Date();S.history.unshift({timestamp:stamp(t),source:S.source,data:current()});$("stampLine").textContent="Snapshot｜"+stamp(t);$("sourceBadge").textContent="Human Edited";$("sourceText").textContent="このMapは本人との対話を経たSnapshotです。";render();$("status").textContent="この時点を記録しました。"};
 
