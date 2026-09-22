@@ -63,7 +63,8 @@ textarea{resize:vertical;min-height:80px;line-height:1.6}
 .helper{background:#fffaf0;border:1px solid #ecd9aa;border-radius:12px;padding:10px 12px;color:#6f5b28;font-size:12px;line-height:1.6;margin-bottom:12px}
 .materials{background:var(--soft)}
 @media(max-width:800px){.meta,.two,.three,.history,.step{grid-template-columns:1fr}}
-@media print{header,.toolbar,.metaPanel,.historyPanel,.sourcebar,.helper,.compose{display:none!important}body{background:#fff}main{padding:0}.panel{border:0;margin:0;box-shadow:none}.map{border:0}}
+@media print{header,.toolbar,.metaPanel,.historyPanel,.sourcebar,.helper,.compose{display:none!important}.credit{display:block}body{background:#fff}main{padding:0}.panel{border:0;margin:0;box-shadow:none}.map{border:0}}
+.credit{text-align:center;font-size:11px;color:#6a7e83;padding:10px 4px 26px}
 </style>
 </head>
 <body>
@@ -73,25 +74,25 @@ textarea{resize:vertical;min-height:80px;line-height:1.6}
 <button class="primary" id="snapshot">この時点を記録</button><button id="image">画像として保存</button><button id="pdf">PDFで保存・印刷</button><button id="save">編集データを保存</button>
 <label class="filelabel" for="load">過去データを読み込む</label><input id="load" type="file" accept=".txt,.json"><span id="status" class="status"></span>
 </div>
-<div class="helper"><b>使い方</b>：① Life Line Chartを見ながらの1on1で出てきた言葉を「視点」に書く → ② 講義で学んだことをもとに、一番の課題・解決策・Identity Statementを自分で埋めていく → ③ 変わったら「この時点を記録」で版を残す。上から順に。実績から考え始めないこと——ポジショニングが実績を創ります。1on1の最後に「編集データを保存」を必ず押すこと（ブラウザには何も残らず、ファイルだけが記録です）。</div>
+<div class="helper"><b>使い方</b>：① Life Line Chartを見ながらの1on1で出てきた言葉を「視る場所」に書く → ② 講義で学んだことをもとに、一番の原因・解決策・Identity Statementを自分で埋めていく → ③ 変わったら「この時点を記録」で版を残す。上から順に。実績から考え始めないこと——ポジショニングが実績を創ります。1on1の最後に「編集データを保存」を必ず押すこと（ブラウザには何も残らず、ファイルだけが記録です）。</div>
 
 <section class="panel metaPanel"><div class="meta"><div><div class="label">名前</div><input id="name"></div><div><div class="label">現在の肩書き・役割（任意）</div><input id="role"></div></div></section>
 
 <section class="panel"><div class="sourcebar"><div><span id="sourceBadge" class="badge">Working Map</span> <span id="sourceText" class="note">本人の言葉で書く。AIの文章を貼らない。</span></div><span id="generatedAt" class="note"></span></div>
 <div id="capture" class="map">
-<div class="maphead"><h2>Next Journey Map</h2><div class="sub">HATCH → NETWORK ｜ 視点 → 一番の課題 → 解決策 → 私は何を解決する人か → 裏付け → ヘッドライン</div></div>
+<div class="maphead"><h2>Next Journey Map</h2><div class="sub">HATCH → NETWORK ｜ 視る場所 → 一番の原因 → 解決策 → 私は何を解決する人か → 裏付け → ヘッドライン</div></div>
 
-<div class="step"><div class="k">視点<small>Life Line Chartの1on1で出てきた言葉から。何にイラっとするか、何を見るともやっとするか。この感覚が、あなた独自の視点。</small></div><textarea id="irritation" placeholder="例：現場からの改善提案が、会議で「前例がない」の一言で消えるのを見るともやっとする"></textarea></div>
+<div class="step"><div class="k">視る場所<small>Life Line Chartの1on1で出てきた言葉から。何にイラっとするか、何を見るともやっとするか。この感覚が、あなた独自の視点。</small></div><textarea id="irritation" placeholder="例：現場からの改善提案が、会議で「前例がない」の一言で消えるのを見るともやっとする"></textarea></div>
 
-<div class="step"><div class="k">一番の課題<small>同じ景色でも、どこを視るかで「一番の課題」は変わる。誰の、どんな課題か。</small></div><div class="two"><div><div class="label">誰の課題か（対象）</div><input id="who" placeholder="例：中小製造業の2代目・3代目経営者"></div><div><div class="label">一番の課題は何か</div><textarea id="problem" placeholder="例：現場の「困りごと」を経営判断の言葉に翻訳できる人が社内にいないこと"></textarea></div></div></div>
+<div class="step"><div class="k">一番の原因<small>同じ景色でも、どこを視るかで「一番の原因」は変わる。誰の、何が原因か。</small></div><div class="two"><div><div class="label">誰の問題か（対象）</div><input id="who" placeholder="例：中小製造業の2代目・3代目経営者"></div><div><div class="label">一番の原因は何か</div><textarea id="problem" placeholder="例：現場の「困りごと」を経営判断の言葉に翻訳できる人が社内にいないこと"></textarea></div></div></div>
 
-<div class="step"><div class="k">解決策<small>「一番の課題」が決まるから、解決策が決まる。正解は一つではない。あなたの答えでいい。</small></div><textarea id="solution" placeholder="例：現場の声を数字と一枚の図にして、経営会議に持ち込める形に整える"></textarea></div>
+<div class="step"><div class="k">解決策<small>「一番の原因」が決まるから、解決策が決まる。正解は一つではない。あなたの答えでいい。</small></div><textarea id="solution" placeholder="例：現場の声を数字と一枚の図にして、経営会議に持ち込める形に整える"></textarea></div>
 
-<div class="identity"><small>IDENTITY STATEMENT ｜ 私は何を解決する人か</small><textarea id="identity" placeholder="私は、［誰］の［一番の課題］を、［解決策］で解決する人。"></textarea><div class="compose"><button type="button" id="compose">上の3項目から文を組み立てる</button><span class="note" style="color:rgba(255,255,255,.7)">組み立てた後、本人の言葉に直す</span></div></div>
+<div class="identity"><small>IDENTITY STATEMENT ｜ 私は何を解決する人か</small><textarea id="identity" placeholder="私は、［誰］の［一番の原因］を、［解決策］で解決する人。"></textarea><div class="compose"><button type="button" id="compose">上の3項目から文を組み立てる</button><span class="note" style="color:rgba(255,255,255,.7)">組み立てた後、本人の言葉に直す</span></div></div>
 
 <div class="step"><div class="k">裏付け<small>ポジショニングを支える経験3つ。実績が先ではなく、視点を裏付ける順番で。</small></div><div class="three"><textarea id="ev1" placeholder="経験1"></textarea><textarea id="ev2" placeholder="経験2"></textarea><textarea id="ev3" placeholder="経験3"></textarea></div></div>
 
-<div class="step"><div class="k">ヘッドライン<small>LinkedInの名前の下の1行。一番の課題と解決策を置く。</small></div><div><div class="headline"><input id="headline" placeholder="例：中小製造業の「現場の声が経営に届かない」を、現場翻訳で解決する"></div><div class="label" style="margin-top:12px">発信テーマ3つ（この視点を言い続けるために）</div><div class="three"><input id="theme1" placeholder="テーマ1"><input id="theme2" placeholder="テーマ2"><input id="theme3" placeholder="テーマ3"></div></div></div>
+<div class="step"><div class="k">ヘッドライン<small>LinkedInの名前の下の1行。一番の原因と解決策を置く。</small></div><div><div class="headline"><input id="headline" placeholder="例：中小製造業の「現場の声が経営に届かない」を、現場翻訳で解決する"></div><div class="label" style="margin-top:12px">発信テーマ3つ（この視点を言い続けるために）</div><div class="three"><input id="theme1" placeholder="テーマ1"><input id="theme2" placeholder="テーマ2"><input id="theme3" placeholder="テーマ3"></div></div></div>
 
 <div class="footer"><span id="personLine">SCIA HATCH</span><span id="stampLine">Working Map</span></div>
 </div></section>
@@ -100,6 +101,7 @@ textarea{resize:vertical;min-height:80px;line-height:1.6}
 <div class="two" style="margin-top:6px"><div><div class="label">何をしてきた／している人か（人的資本）</div><textarea id="what"></textarea></div><div><div class="label">Values Cardで見つけた5つの価値観</div><div id="values" class="values"></div></div></div></section>
 
 <section class="panel historyPanel"><h2 style="margin-top:0">Journey History｜変化の記録</h2><p class="note">「この時点を記録」を押すと、現在のMapをタイムスタンプ付きで保存します。過去の自分を消さず、言葉の変化そのものを残します。</p><div class="history"><div id="snaps" class="snaps"></div><div id="preview" class="preview">まだ記録はありません。</div></div></section>
+<div class="credit">Copyright © 2026 Kanbee Inc. / SCIA All Rights Reserved.</div>
 </main>
 <script>
 const ids=["irritation","who","problem","solution","identity","ev1","ev2","ev3","headline","theme1","theme2","theme3","what"];
@@ -115,7 +117,7 @@ function apply(d){$("name").value=d.name||"";$("role").value=d.role||"";S.values
 function footer(){$("personLine").textContent=[$("name").value.trim(),$("role").value.trim()].filter(Boolean).join("｜")||"SCIA HATCH"}
 $("name").oninput=footer;$("role").oninput=footer;
 
-$("compose").onclick=()=>{const who=oneLine($("who").value),p=oneLine($("problem").value),s=oneLine($("solution").value);if(!who&&!p&&!s){$("status").textContent="先に「一番の課題」と「解決策」を埋めてください。";return}$("identity").value=`私は、${who||"［誰］"}の「${p||"［一番の課題］"}」を、${s||"［解決策］"}で解決する人。`;$("status").textContent="文を組み立てました。本人の言葉に直してください。"};
+$("compose").onclick=()=>{const who=oneLine($("who").value),p=oneLine($("problem").value),s=oneLine($("solution").value);if(!who&&!p&&!s){$("status").textContent="先に「一番の原因」と「解決策」を埋めてください。";return}$("identity").value=`私は、${who||"［誰］"}の「${p||"［一番の原因］"}」を、${s||"［解決策］"}で解決する人。`;$("status").textContent="文を組み立てました。本人の言葉に直してください。"};
 
 // v0.2形式（heart/voice）・AI Draft形式のどちらも読める
 function normalizeDraft(raw){
@@ -142,7 +144,7 @@ function parseJSONFromText(text){let t=text.trim().replace(/^```(?:json)?\s*/i,"
 $("snapshot").onclick=()=>{let t=new Date();S.history.unshift({timestamp:stamp(t),source:S.source,data:current()});$("stampLine").textContent="Snapshot｜"+stamp(t);$("sourceBadge").textContent="Human Edited";$("sourceText").textContent="このMapは本人との対話を経たSnapshotです。";render();$("status").textContent="この時点を記録しました。"};
 
 function render(){let w=$("snaps");w.innerHTML="";if(!S.history.length){w.innerHTML='<span class="note">記録はまだありません。</span>';return}S.history.forEach((s,i)=>{let e=document.createElement("div");e.className="snap";e.innerHTML=`<time>${s.timestamp}</time><b>${esc(s.data.identity||"Identity Statement 作成中")}</b><span class="note">${esc(s.source||"Snapshot")}</span>`;e.onclick=()=>show(i);w.appendChild(e)})}
-function show(i){let s=S.history[i],d=s.data,br=x=>esc(x).replace(/\n/g,"<br>");$("preview").innerHTML=`<b>${esc(s.timestamp)}</b><h3>${esc(d.identity||"（未入力）")}</h3><p><b>視る場所</b><br>${br(d.irritation)}</p><p><b>一番の課題</b><br>${esc(d.who)}${d.who?"：":""}${br(d.problem)}</p><p><b>解決策</b><br>${br(d.solution)}</p><p><b>ヘッドライン</b><br>${esc(d.headline)}</p><p><b>発信テーマ</b><br>${[d.theme1,d.theme2,d.theme3].filter(Boolean).map(esc).join(" ／ ")}</p><button onclick="restore(${i})">この時点を編集画面に復元</button>`}
+function show(i){let s=S.history[i],d=s.data,br=x=>esc(x).replace(/\n/g,"<br>");$("preview").innerHTML=`<b>${esc(s.timestamp)}</b><h3>${esc(d.identity||"（未入力）")}</h3><p><b>視る場所</b><br>${br(d.irritation)}</p><p><b>一番の原因</b><br>${esc(d.who)}${d.who?"：":""}${br(d.problem)}</p><p><b>解決策</b><br>${br(d.solution)}</p><p><b>ヘッドライン</b><br>${esc(d.headline)}</p><p><b>発信テーマ</b><br>${[d.theme1,d.theme2,d.theme3].filter(Boolean).map(esc).join(" ／ ")}</p><button onclick="restore(${i})">この時点を編集画面に復元</button>`}
 window.restore=i=>{apply(S.history[i].data);$("status").textContent="過去のMapを復元しました。元の履歴は残っています。";scrollTo({top:0,behavior:"smooth"})};
 
 function dl(data,name,type){let b=new Blob([data],{type}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
@@ -151,7 +153,7 @@ $("load").onchange=async e=>{try{let d=parseJSONFromText(await e.target.files[0]
 $("pdf").onclick=()=>{$("stampLine").textContent="Output｜"+stamp(new Date());print()};
 
 $("image").onclick=()=>{let d=current(),t=new Date(),lines=s=>esc(oneLine(s).slice(0,100));
-  let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000"><rect width="1600" height="1000" fill="#edf7f4"/><rect x="45" y="35" width="1510" height="930" rx="30" fill="#fbfdfc" stroke="#d1e4df"/><text x="800" y="90" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="800" fill="#263a70">Next Journey Map</text><text x="800" y="125" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#64777c">何ができる人か ＝ 何を解決する人か</text><rect x="180" y="155" width="1240" height="100" rx="20" fill="#263a70"/><text x="800" y="215" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="800" fill="white">${lines(d.identity||"私は、［誰］の［一番の課題］を、［解決策］で解決する人。")}</text>${box("視る場所",d.irritation,70,290)}${box("一番の課題",(d.who?d.who+"：":"")+d.problem,820,290)}${box("解決策",d.solution,70,555)}${box("裏付け",[d.ev1,d.ev2,d.ev3].filter(Boolean).join(" ／ "),820,555)}<rect x="70" y="810" width="1460" height="70" rx="14" fill="white" stroke="#128e8c" stroke-width="2"/><text x="95" y="853" font-family="sans-serif" font-size="22" font-weight="800" fill="#263a70">${lines(d.headline||"ヘッドライン未設定")}</text><text x="80" y="920" font-family="sans-serif" font-size="15" fill="#64777c">${lines([d.name,d.role].filter(Boolean).join("｜"))}</text><text x="1520" y="920" text-anchor="end" font-family="sans-serif" font-size="15" fill="#64777c">Output｜${stamp(t)}</text></svg>`;
+  let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000"><rect width="1600" height="1000" fill="#edf7f4"/><rect x="45" y="35" width="1510" height="930" rx="30" fill="#fbfdfc" stroke="#d1e4df"/><text x="800" y="90" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="800" fill="#263a70">Next Journey Map</text><text x="800" y="125" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#64777c">何ができる人か ＝ 何を解決する人か</text><rect x="180" y="155" width="1240" height="100" rx="20" fill="#263a70"/><text x="800" y="215" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="800" fill="white">${lines(d.identity||"私は、［誰］の［一番の原因］を、［解決策］で解決する人。")}</text>${box("視る場所",d.irritation,70,290)}${box("一番の原因",(d.who?d.who+"：":"")+d.problem,820,290)}${box("解決策",d.solution,70,555)}${box("裏付け",[d.ev1,d.ev2,d.ev3].filter(Boolean).join(" ／ "),820,555)}<rect x="70" y="810" width="1460" height="70" rx="14" fill="white" stroke="#128e8c" stroke-width="2"/><text x="95" y="853" font-family="sans-serif" font-size="22" font-weight="800" fill="#263a70">${lines(d.headline||"ヘッドライン未設定")}</text><text x="80" y="920" font-family="sans-serif" font-size="15" fill="#64777c">${lines([d.name,d.role].filter(Boolean).join("｜"))}</text><text x="1520" y="920" text-anchor="end" font-family="sans-serif" font-size="15" fill="#64777c">Output｜${stamp(t)}</text></svg>`;
   dl(svg,"Next_Journey_Map_"+t.toISOString().replace(/[:.]/g,"-")+".svg","image/svg+xml");$("status").textContent="タイムスタンプ付き画像を保存しました。"};
 function box(title,text,x,y){let a=oneLine(text).match(/.{1,34}/g)||[""];return `<rect x="${x}" y="${y}" width="710" height="235" rx="20" fill="white" stroke="#d1e4df"/><text x="${x+28}" y="${y+42}" font-family="sans-serif" font-size="27" font-weight="800" fill="#128e8c">${title}</text>${a.slice(0,5).map((l,i)=>`<text x="${x+28}" y="${y+82+i*28}" font-family="sans-serif" font-size="19" fill="#273856">${esc(l)}</text>`).join("")}`}
 
