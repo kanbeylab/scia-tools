@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>言い切ってみるワーク｜SCIA</title>
+<meta name="description" content="セカンドキャリア・インキュベーション協会（SCIA）2026年11月17日リアルイベントの第2部で使うワークページです。">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="言い切ってみるワーク｜SCIA">
+<meta property="og:description" content="隣の方の話を聞いて、その方に向けて一文を作ります。SCIA 2026.11.17 リアルイベント 第2部。">
+<meta property="og:site_name" content="セカンドキャリア・インキュベーション協会">
+<meta name="theme-color" content="#5FAFA2">
+<style>
+:root{
+  --paper:#FAF8F3; --card:#FFFFFF; --ink:#1A1A2E; --muted:#6E6E7E;
+  --mint:#5FAFA2; --mint-l:#E2F2EF; --salmon:#E27D6B; --line:#DCD8D0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15171C; --card:#1E2128; --ink:#F2F1EE; --muted:#9A9AA8;
+    --mint:#6FBFB1; --mint-l:#24332F; --salmon:#E8907E; --line:#333842;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15171C; --card:#1E2128; --ink:#F2F1EE; --muted:#9A9AA8;
+  --mint:#6FBFB1; --mint-l:#24332F; --salmon:#E8907E; --line:#333842;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,system-ui,sans-serif;
+  font-size:17px; line-height:1.75; letter-spacing:.01em;
+}
+.wrap{max-width:620px;margin:0 auto;padding:18px 18px 56px}
+
+/* header */
+.hd{display:flex;align-items:center;gap:9px;padding:6px 0 18px}
+.mark{width:28px;height:28px;border-radius:9px;background:var(--mint);color:#fff;
+  font-weight:800;font-size:15px;display:grid;place-items:center;flex:none}
+.hd b{font-size:17px;letter-spacing:.04em}
+.hd span{font-size:11px;color:var(--muted)}
+
+/* progress */
+.bar{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:22px}
+.bar>i{display:block;height:100%;background:var(--mint);width:0;transition:width .35s ease}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;margin-bottom:16px}
+.card.accent{background:var(--mint-l);border-color:var(--mint)}
+
+h1{font-size:25px;line-height:1.5;margin:0 0 12px;letter-spacing:.01em}
+h2{font-size:20px;line-height:1.55;margin:0 0 10px}
+p{margin:0 0 12px}
+.lede{color:var(--muted);font-size:15px}
+.kicker{font-size:12px;font-weight:700;color:var(--mint);letter-spacing:.09em;margin:0 0 8px}
+.rules{margin:0;padding-left:1.15em}
+.rules li{margin-bottom:9px;font-size:15px}
+.rules b{color:var(--ink)}
+
+textarea{
+  width:100%;min-height:118px;padding:14px;border:1.5px solid var(--line);
+  border-radius:12px;background:var(--card);color:var(--ink);
+  font-family:inherit;font-size:17px;line-height:1.7;resize:vertical
+}
+textarea:focus{outline:none;border-color:var(--mint)}
+.hint{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+
+.btns{display:flex;gap:10px;margin-top:6px}
+button{
+  font-family:inherit;font-size:17px;font-weight:700;border:none;border-radius:12px;
+  padding:15px 18px;cursor:pointer;flex:1;letter-spacing:.02em
+}
+.go{background:var(--mint);color:#fff}
+.go:disabled{opacity:.4;cursor:default}
+.back{background:transparent;color:var(--muted);border:1.5px solid var(--line);flex:0 0 96px}
+.ghost{background:transparent;color:var(--mint);border:1.5px solid var(--mint)}
+
+/* statement */
+.stmt{font-size:21px;line-height:1.85;font-weight:700;margin:0}
+.stmt .fill{color:var(--salmon)}
+.because{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:16px;line-height:1.8;font-weight:400;white-space:pre-wrap}
+.because .lbl{display:block;font-size:12px;font-weight:700;color:var(--mint);
+  letter-spacing:.08em;margin-bottom:6px}
+
+.tag{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--mint);
+  border-radius:99px;padding:4px 12px;margin-bottom:14px;letter-spacing:.04em}
+.note{font-size:13.5px;color:var(--muted);text-align:center;margin-top:22px;line-height:1.7}
+.hidden{display:none}
+.center{text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <div class="mark">S</div>
+    <div>
+      <b>SCIA</b><br>
+      <span>2026.11.17　言い切ってみるワーク</span>
+    </div>
+  </div>
+
+  <div class="bar"><i id="prog"></i></div>
+
+  <!-- ===== 0. イントロ ===== -->
+  <section id="s-intro">
+    <div class="card">
+      <p class="kicker">これからやること</p>
+      <h1>隣の人の課題に、<br>言い切ってみる。</h1>
+      <p class="lede">自分のことは、まだ考えません。隣の方の話を聞いて、その方に向けて一文を作ります。そのあとで、なぜそう言えるのかを、自分の経験から探します。<br>終わったら役割を交代して、同じことをもう一度。</p>
+    </div>
+
+    <div class="card accent">
+      <h2>4つのルール</h2>
+      <ul class="rules">
+        <li><b>会社名と肩書きは言いません。</b>今日はお互い、それなしで話します</li>
+        <li><b>「悩み」でなくて構いません。</b>いま気になっていること、ちょっと直したいこと、くらいで十分です</li>
+        <li><b>見立ては、正解でなくていい。</b>外れていても、言い切ってみることが今日の練習です</li>
+        <li><b>自分の経験に紐づかなくても大丈夫。</b>紐づかなかったら、それが今日の収穫です。自分が誰に何を言える人なのか、その範囲が見えたということなので</li>
+      </ul>
+    </div>
+
+    <div class="btns"><button class="go" onclick="go('r1q1')">はじめる</button></div>
+    <p class="note">入力はこの端末の中だけに一時保存されます。<br>どこにも送信されず、次の方に進むと消えます。</p>
+  </section>
+
+  <!-- ===== ラウンド1 ===== -->
+  <section id="s-r1q1" class="hidden">
+    <div class="card">
+      <span class="tag">聞く（3分）</span>
+      <h2>その方が、いま気になっていること・ちょっと直したいことは何ですか</h2>
+      <textarea id="i-r1-issue" placeholder="例）朝、なかなか起きられない"></textarea>
+      <p class="hint">まず3分、聞くことに集中してください。メモは短くて構いません。</p>
+    </div>
+    <div class="btns">
+      <button class="back" onclick="go('intro')">戻る</button>
+      <button class="go" data-need="i-r1-issue" onclick="go('r1q2')">次へ</button>
+    </div>
+  </section>
+
+  <section id="s-r1q2" class="hidden">
+    <div class="card">
+      <span class="tag">見立てる（2分）</span>
+      <h2>その一番の原因は、何だと思いますか</h2>
+      <textarea id="i-r1-cause" placeholder="例）寝る前にスマホを見ていること"></textarea>
+      <p class="hint">原因はいくつもあります。そこを<b>一つに絞る</b>のが今日の練習です。当たっているかどうかは、いま考えなくて構いません。</p>
+    </div>
+    <div class="btns">
+      <button class="back" onclick="go('r1q1')">戻る</button>
+      <button class="go" data-need="i-r1-cause" onclick="go('r1q3')">次へ</button>
+    </div>
+  </section>
+
+  <section id="s-r1q3" class="hidden">
+    <div class="card">
+      <span class="tag">言い切る（2分）</span>
+      <h2>だから、どうすればいいと思いますか</h2>
+      <textarea id="i-r1-fix" placeholder="例）スマホを寝室の外に置くこと"></textarea>
+      <p class="hint">さきほど絞った原因を、まっすぐ外す方法を書いてください。</p>
+    </div>
+    <div class="btns">
+      <button class="back" onclick="go('r1q2')">戻る</button>
+      <button class="go" data-need="i-r1-fix" onclick="go('r1stmt')">文にする</button>
+    </div>
+  </section>
+
+  <section id="s-r1stmt" class="hidden">
+    <div class="card accent">
+      <p class="kicker">できた一文</p>
+      <p class="stmt" id="out-r1"></p>
+    </div>
+    <div class="card">
+      <h2>なぜ、そう言えるのですか</h2>
+      <textarea id="i-r1-why" placeholder="例）単身赴任していた頃、寝室に何も持ち込まない習慣にしたら、3週間で朝が変わった"></textarea>
+      <p class="hint">あのとき、あの場面で、何を見て、どう動いたか。<br>思いつかなければ、空欄のまま進んで構いません。</p>
+    </div>
+    <div class="btns">
+      <button class="back" onclick="go('r1q3')">戻る</button>
+      <button class="go" onclick="go('done')">できた</button>
+    </div>
+  </section>
+
+  <!-- ===== 完成 ===== -->
+  <section id="s-done" class="hidden">
+    <div class="card">
+      <p class="kicker">できた一文</p>
+      <h1>相手に向かって、<br>読み上げてみてください。</h1>
+      <p class="lede">声に出すところまでが、今日のワークです。</p>
+    </div>
+
+    <div class="card accent">
+      <p class="stmt" id="fin"></p>
+      <div class="because" id="finwhy"></div>
+    </div>
+
+    <div class="btns">
+      <button class="back" onclick="go('r1stmt')">戻る</button>
+      <button class="go" onclick="nextPerson()">次の人へ</button>
+    </div>
+    <p class="note">「次の人へ」を押すと入力は消えます。<br>相手を変えて、何人とでも試せます。</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var KEY = 'scia-1117-work-v2';
+  var ORDER = ['intro','r1q1','r1q2','r1q3','r1stmt','done'];
+  var FIELDS = ['i-r1-issue','i-r1-cause','i-r1-fix','i-r1-why'];
+  var cur = 'intro';
+
+  function $(id){ return document.getElementById(id); }
+  function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+  function val(id){ var el=$(id); return el ? el.value.trim() : ''; }
+
+  function load(){
+    try{
+      var raw = localStorage.getItem(KEY);
+      if(!raw) return;
+      var d = JSON.parse(raw);
+      FIELDS.forEach(function(f){ if(d[f] && $(f)) $(f).value = d[f]; });
+      if(d.__step && ORDER.indexOf(d.__step) > -1) cur = d.__step;
+    }catch(e){}
+  }
+  function save(){
+    try{
+      var d = {__step: cur};
+      FIELDS.forEach(function(f){ if($(f)) d[f] = $(f).value; });
+      localStorage.setItem(KEY, JSON.stringify(d));
+    }catch(e){}
+  }
+  function clear(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    FIELDS.forEach(function(f){ if($(f)) $(f).value=''; });
+  }
+
+  function sentence(cause, fix){
+    var c = cause ? '<span class="fill">'+esc(cause)+'</span>' : '<span class="fill">［一番の原因］</span>';
+    var f = fix   ? '<span class="fill">'+esc(fix)+'</span>'   : '<span class="fill">［解決策］</span>';
+    return '私は、あなたの課題の ' + c + ' を、<br>' + f + ' で解決する人。';
+  }
+
+  function gate(){
+    document.querySelectorAll('button[data-need]').forEach(function(b){
+      b.disabled = !val(b.getAttribute('data-need'));
+    });
+  }
+
+  function render(){
+    ORDER.forEach(function(k){
+      var el = $('s-'+k);
+      if(el) el.classList.toggle('hidden', k !== cur);
+    });
+    $('prog').style.width = (ORDER.indexOf(cur) / (ORDER.length-1) * 100) + '%';
+
+    var html = sentence(val('i-r1-cause'), val('i-r1-fix'));
+    $('out-r1').innerHTML = html;
+    $('fin').innerHTML = html;
+
+    var box = $('finwhy'), why = val('i-r1-why');
+    if(why){
+      box.innerHTML = '<span class="lbl">そう言えるのは</span>' + esc(why);
+      box.style.display = '';
+    } else {
+      box.style.display = 'none';
+    }
+
+    gate();
+    window.scrollTo(0,0);
+  }
+
+  window.go = function(step){ cur = step; save(); render(); };
+
+  window.nextPerson = function(){
+    if(!confirm('入力を消して、次の方とはじめますか。')) return;
+    clear(); cur = 'r1q1'; save(); render();
+  };
+
+  document.addEventListener('input', function(e){
+    if(e.target && e.target.tagName === 'TEXTAREA'){ save(); gate(); }
+  });
+
+  load();
+  render();
+})();
+</script>
+</body>
+</html>
