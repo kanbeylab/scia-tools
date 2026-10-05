@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>言い切ってみるワーク｜SCIA</title>
-<meta name="description" content="セカンドキャリア・インキュベーション協会（SCIA）2026年11月17日リアルイベントの第2部で使うワークページです。">
+<title>言い切ってみる｜SCIA</title>
+<meta name="description" content="「私は、◯◯の課題の△△を、□□で解決する人」。この一文を、ひとりで組み立ててみるためのページです。">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="言い切ってみるワーク｜SCIA">
-<meta property="og:description" content="隣の方の話を聞いて、その方に向けて一文を作ります。SCIA 2026.11.17 リアルイベント 第2部。">
+<meta property="og:title" content="言い切ってみる｜SCIA">
+<meta property="og:description" content="「私は、◯◯の課題の△△を、□□で解決する人」。この一文を、ひとりで組み立ててみるためのページです。">
 <meta property="og:site_name" content="セカンドキャリア・インキュベーション協会">
 <meta name="theme-color" content="#5FAFA2">
 <style>
@@ -37,38 +37,27 @@ body{
   font-size:17px; line-height:1.75; letter-spacing:.01em;
 }
 .wrap{max-width:620px;margin:0 auto;padding:18px 18px 56px}
-
-/* header */
 .hd{display:flex;align-items:center;gap:9px;padding:6px 0 18px}
 .mark{width:28px;height:28px;border-radius:9px;background:var(--mint);color:#fff;
   font-weight:800;font-size:15px;display:grid;place-items:center;flex:none}
 .hd b{font-size:17px;letter-spacing:.04em}
 .hd span{font-size:11px;color:var(--muted)}
-
-/* progress */
 .bar{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:22px}
 .bar>i{display:block;height:100%;background:var(--mint);width:0;transition:width .35s ease}
-
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;margin-bottom:16px}
 .card.accent{background:var(--mint-l);border-color:var(--mint)}
-
 h1{font-size:25px;line-height:1.5;margin:0 0 12px;letter-spacing:.01em}
 h2{font-size:20px;line-height:1.55;margin:0 0 10px}
 p{margin:0 0 12px}
 .lede{color:var(--muted);font-size:15px}
 .kicker{font-size:12px;font-weight:700;color:var(--mint);letter-spacing:.09em;margin:0 0 8px}
-.rules{margin:0;padding-left:1.15em}
-.rules li{margin-bottom:9px;font-size:15px}
-.rules b{color:var(--ink)}
-
 textarea{
-  width:100%;min-height:118px;padding:14px;border:1.5px solid var(--line);
+  width:100%;min-height:112px;padding:14px;border:1.5px solid var(--line);
   border-radius:12px;background:var(--card);color:var(--ink);
   font-family:inherit;font-size:17px;line-height:1.7;resize:vertical
 }
 textarea:focus{outline:none;border-color:var(--mint)}
 .hint{font-size:13.5px;color:var(--muted);margin:10px 0 0}
-
 .btns{display:flex;gap:10px;margin-top:6px}
 button{
   font-family:inherit;font-size:17px;font-weight:700;border:none;border-radius:12px;
@@ -78,15 +67,20 @@ button{
 .go:disabled{opacity:.4;cursor:default}
 .back{background:transparent;color:var(--muted);border:1.5px solid var(--line);flex:0 0 96px}
 .ghost{background:transparent;color:var(--mint);border:1.5px solid var(--mint)}
-
-/* statement */
+.pick{
+  display:block;width:100%;text-align:left;background:var(--card);
+  border:1.5px solid var(--line);border-radius:14px;padding:18px 18px;margin-bottom:12px;
+  font-size:17px;font-weight:700;color:var(--ink);line-height:1.6;cursor:pointer
+}
+.pick:hover,.pick:focus{border-color:var(--mint);outline:none}
+.pick em{display:block;font-style:normal;font-weight:400;font-size:14px;color:var(--muted);margin-top:6px;line-height:1.7}
+.toward{font-size:13px;color:var(--muted);margin:0 0 12px;font-weight:700}
 .stmt{font-size:21px;line-height:1.85;font-weight:700;margin:0}
 .stmt .fill{color:var(--salmon)}
 .because{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);
   font-size:16px;line-height:1.8;font-weight:400;white-space:pre-wrap}
 .because .lbl{display:block;font-size:12px;font-weight:700;color:var(--mint);
   letter-spacing:.08em;margin-bottom:6px}
-
 .tag{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--mint);
   border-radius:99px;padding:4px 12px;margin-bottom:14px;letter-spacing:.04em}
 .note{font-size:13.5px;color:var(--muted);text-align:center;margin-top:22px;line-height:1.7}
@@ -99,139 +93,184 @@ button{
 
   <div class="hd">
     <div class="mark">S</div>
-    <div>
-      <b>SCIA</b><br>
-      <span>2026.11.17　言い切ってみるワーク</span>
-    </div>
+    <div><b>SCIA</b><br><span>言い切ってみる</span></div>
   </div>
 
   <div class="bar"><i id="prog"></i></div>
 
-  <!-- ===== 0. イントロ ===== -->
+  <!-- 0. イントロ -->
   <section id="s-intro">
     <div class="card">
-      <p class="kicker">これからやること</p>
-      <h1>隣の人の課題に、<br>言い切ってみる。</h1>
-      <p class="lede">相手の話を聞いて、その方に向けて一文を作ります。そのあとで、なぜそう言えるのかを、自分の経験から探します。<br>終わったら役割を交代して、同じことをもう一度。</p>
+      <h1>この一文を、<br>組み立ててみます。</h1>
+      <p class="stmt" style="margin:16px 0 0">あなたの課題の一番の原因は、<span class="fill">［一番の原因］</span>。<br>わたしは、<span class="fill">［解決策］</span>で解決します。<br>なぜなら私には、<span class="fill">［経験］</span>経験があるから。</p>
     </div>
-
     <div class="card accent">
-      <h2>4つのルール</h2>
-      <ul class="rules">
-        <li><b>会社名と肩書きは言いません。</b>今日はお互い、それなしで話します</li>
-        <li><b>「悩み」でなくて構いません。</b>いま気になっていること、ちょっと直したいこと、くらいで十分です</li>
-        <li><b>見立ては、正解でなくていい。</b>外れていても、言い切ってみることが今日の練習です</li>
-        <li><b>自分の経験に紐づかなくても大丈夫。</b>紐づかなかったら、それが今日の収穫です。あくまでもこれは練習です。</li>
-      </ul>
+      <h2>3つだけ、先に</h2>
+      <p class="lede" style="margin-bottom:8px">・これはあくまで練習です。正解を出す必要はありません。</p>
+      <p class="lede" style="margin-bottom:8px">・原因は、一つに絞ります。</p>
+      <p class="lede" style="margin-bottom:0">・最後は、自分の経験を書きます。大きな実績でなくて構いません。</p>
     </div>
-
-    <div class="btns"><button class="go" onclick="go('r1q1')">はじめる</button></div>
-    <p class="note">入力はこの端末の中だけに一時保存されます。<br>どこにも送信されず、次の方に進むと消えます。</p>
+    <div class="btns"><button class="go" onclick="go('pick')">はじめる</button></div>
+    <p class="note">入力はこの端末の中だけに保存されます。<br>どこにも送信されません。</p>
   </section>
 
-  <!-- ===== ラウンド1 ===== -->
-  <section id="s-r1q1" class="hidden">
+  <!-- 1. A/B 選択 -->
+  <section id="s-pick" class="hidden">
     <div class="card">
-      <span class="tag">聞く（3分）</span>
-      <h2>その方が、いま気になっていること・ちょっと直したいことは何ですか</h2>
-      <textarea id="i-r1-issue" placeholder="例）朝、なかなか起きられない"></textarea>
-      <p class="hint">まず3分、聞くことに集中してください。メモは短くて構いません。</p>
+      <h2>はじめに、「あなた」を決めます</h2>
+      <p class="lede">やりやすいほうを選んでください。</p>
+    </div>
+    <button class="pick" onclick="pick('A')">
+      思い浮かぶ人がいる
+      <em>昔の部下、かつての自分と同じ悩みを抱えていた人。実在の誰かを1人、思い浮かべて進みます。</em>
+    </button>
+    <button class="pick" onclick="pick('B')">
+      「こういう人」で考えたい
+      <em>特定の誰かではなく、どんな人かを言葉にして進みます。</em>
+    </button>
+    <div class="btns"><button class="back" onclick="go('intro')">戻る</button></div>
+  </section>
+
+  <!-- A-0. 相手を決める -->
+  <section id="s-a0" class="hidden">
+    <div class="card">
+      <span class="tag">1 / 5</span>
+      <h2>その人は、どなたですか</h2>
+      <textarea id="i-person" placeholder="例）前の部署にいた後輩のMさん"></textarea>
+      <p class="hint">名前でも、関係性でも構いません。顔が思い浮かべば十分です。</p>
     </div>
     <div class="btns">
-      <button class="back" onclick="go('intro')">戻る</button>
-      <button class="go" data-need="i-r1-issue" onclick="go('r1q2')">次へ</button>
+      <button class="back" onclick="go('pick')">戻る</button>
+      <button class="go" data-need="i-person" onclick="go('issue')">次へ</button>
     </div>
   </section>
 
-  <section id="s-r1q2" class="hidden">
+  <!-- B-0. どんな人か -->
+  <section id="s-b0" class="hidden">
     <div class="card">
-      <span class="tag">見立てる（2分）</span>
+      <span class="tag">1 / 5</span>
+      <h2>どんな人ですか</h2>
+      <textarea id="i-who" placeholder="例）はじめて部下を持った人"></textarea>
+      <p class="hint">立場でも、状況でも、気持ちでも構いません。</p>
+    </div>
+    <div class="btns">
+      <button class="back" onclick="go('pick')">戻る</button>
+      <button class="go" data-need="i-who" onclick="go('issue')">次へ</button>
+    </div>
+  </section>
+
+  <!-- 2. 課題 -->
+  <section id="s-issue" class="hidden">
+    <div class="card">
+      <span class="tag" id="t-issue"></span>
+      <h2 id="h-issue"></h2>
+      <textarea id="i-issue" placeholder="例）何を任せていいか分からない"></textarea>
+      <p class="hint">大きなことでなくて構いません。</p>
+    </div>
+    <div class="btns">
+      <button class="back" onclick="goBackFromIssue()">戻る</button>
+      <button class="go" data-need="i-issue" onclick="go('cause')">次へ</button>
+    </div>
+  </section>
+
+  <!-- 3. 一番の原因 -->
+  <section id="s-cause" class="hidden">
+    <div class="card">
+      <span class="tag" id="t-cause"></span>
       <h2>その一番の原因は、何だと思いますか</h2>
-      <textarea id="i-r1-cause" placeholder="例）寝る前にスマホを見ていること"></textarea>
-      <p class="hint">原因はいくつもあります。そこを<b>一つに絞る</b>のが今日の練習です。当たっているかどうかは、いま考えなくて構いません。</p>
+      <textarea id="i-cause" placeholder="例）失敗させてはいけないと思っていること"></textarea>
+      <p class="hint">原因はいくつもあります。そこを<b>一つに絞る</b>のが、この練習です。<br>当たっているかどうかは、いま考えなくて構いません。</p>
     </div>
     <div class="btns">
-      <button class="back" onclick="go('r1q1')">戻る</button>
-      <button class="go" data-need="i-r1-cause" onclick="go('r1q3')">次へ</button>
+      <button class="back" onclick="go('issue')">戻る</button>
+      <button class="go" data-need="i-cause" onclick="go('fix')">次へ</button>
     </div>
   </section>
 
-  <section id="s-r1q3" class="hidden">
+  <!-- 4. 解決策 -->
+  <section id="s-fix" class="hidden">
     <div class="card">
-      <span class="tag">言い切る（2分）</span>
+      <span class="tag" id="t-fix"></span>
       <h2>だから、どうすればいいと思いますか</h2>
-      <textarea id="i-r1-fix" placeholder="例）スマホを寝室の外に置くこと"></textarea>
+      <textarea id="i-fix" placeholder="例）失敗できる仕事を先に渡すこと"></textarea>
       <p class="hint">さきほど絞った原因を、まっすぐ外す方法を書いてください。</p>
     </div>
     <div class="btns">
-      <button class="back" onclick="go('r1q2')">戻る</button>
-      <button class="go" data-need="i-r1-fix" onclick="go('r1stmt')">文にする</button>
+      <button class="back" onclick="go('cause')">戻る</button>
+      <button class="go" data-need="i-fix" onclick="go('why')">文にする</button>
     </div>
   </section>
 
-  <section id="s-r1stmt" class="hidden">
+  <!-- 5. なぜそう言えるのか -->
+  <section id="s-why" class="hidden">
     <div class="card accent">
-      <p class="kicker">できた一文</p>
-      <p class="stmt" id="out-r1"></p>
+      <p class="kicker">あと一つで、文が完成します</p>
+      <p class="stmt" id="out-mid"></p>
     </div>
     <div class="card">
+      <span class="tag" id="t-why"></span>
       <h2>なぜ、そう言えるのですか</h2>
-      <textarea id="i-r1-why" placeholder="例）単身赴任していた頃、寝室に何も持ち込まない習慣にしたら、3週間で朝が変わった"></textarea>
-      <p class="hint">あのとき、あの場面で、何を見て、どう動いたか。<br>思いつかなければ、空欄のまま進んで構いません。</p>
+      <textarea id="i-why" placeholder="例）40人の部署を任されたとき、口を出すのをやめた3か月で、一番伸びた人がいた"></textarea>
+      <p class="hint">あのとき、あの場面で、何を見て、どう動いたか。<br>大きな実績でなくて構いません。見てきたこと、やってみたことで十分です。</p>
     </div>
     <div class="btns">
-      <button class="back" onclick="go('r1q3')">戻る</button>
-      <button class="go" onclick="go('done')">できた</button>
+      <button class="back" onclick="go('fix')">戻る</button>
+      <button class="go" data-need="i-why" onclick="go('done')">できた</button>
     </div>
   </section>
 
-  <!-- ===== 完成 ===== -->
+  <!-- 7. 完成 -->
   <section id="s-done" class="hidden">
     <div class="card">
       <p class="kicker">できた一文</p>
-      <h1>相手に向かって、<br>読み上げてみてください。</h1>
-      <p class="lede">声に出すところまでが、今日のワークです。</p>
+      <h1>声に出して、<br>読んでみてください。</h1>
     </div>
-
     <div class="card accent">
+      <p class="toward" id="fin-to"></p>
       <p class="stmt" id="fin"></p>
-      <div class="because" id="finwhy"></div>
     </div>
-
-    <div class="btns">
-      <button class="back" onclick="go('r1stmt')">戻る</button>
-      <button class="go" onclick="nextPerson()">次の人へ</button>
+    <div class="btns" id="again-1">
+      <button class="ghost" onclick="askAgain()">もう一度やってみる</button>
     </div>
-    <p class="note">「次の人へ」を押すと入力は消えます。<br>相手を変えて、何人とでも試せます。</p>
+    <div class="btns hidden" id="again-2">
+      <button class="back" onclick="cancelAgain()" style="flex:1">やめる</button>
+      <button class="go" onclick="again()">入力を消してはじめる</button>
+    </div>
+    <p class="note">「もう一度やってみる」を押すと入力は消えます。</p>
   </section>
 
 </div>
 
 <script>
 (function(){
-  var KEY = 'scia-1117-work-v2';
-  var ORDER = ['intro','r1q1','r1q2','r1q3','r1stmt','done'];
-  var FIELDS = ['i-r1-issue','i-r1-cause','i-r1-fix','i-r1-why'];
-  var cur = 'intro';
+  var KEY = 'scia-solo-statement-v1';
+  var cur = 'intro', mode = 'B';
 
   function $(id){ return document.getElementById(id); }
   function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
   function val(id){ var el=$(id); return el ? el.value.trim() : ''; }
 
-  function load(){
-    try{
-      var raw = localStorage.getItem(KEY);
-      if(!raw) return;
-      var d = JSON.parse(raw);
-      FIELDS.forEach(function(f){ if(d[f] && $(f)) $(f).value = d[f]; });
-      if(d.__step && ORDER.indexOf(d.__step) > -1) cur = d.__step;
-    }catch(e){}
+  var FIELDS = ['i-person','i-who','i-issue','i-cause','i-fix','i-why'];
+  var SECTIONS = ['intro','pick','a0','b0','issue','cause','fix','why','done'];
+
+  function steps(){
+    return ['intro','pick', mode === 'A' ? 'a0' : 'b0','issue','cause','fix','why','done'];
   }
+
   function save(){
     try{
-      var d = {__step: cur};
+      var d = {__step: cur, __mode: mode};
       FIELDS.forEach(function(f){ if($(f)) d[f] = $(f).value; });
       localStorage.setItem(KEY, JSON.stringify(d));
+    }catch(e){}
+  }
+  function load(){
+    try{
+      var raw = localStorage.getItem(KEY); if(!raw) return;
+      var d = JSON.parse(raw);
+      FIELDS.forEach(function(f){ if(d[f] && $(f)) $(f).value = d[f]; });
+      if(d.__mode) mode = d.__mode;
+      if(d.__step && SECTIONS.indexOf(d.__step) > -1) cur = d.__step;
     }catch(e){}
   }
   function clear(){
@@ -239,10 +278,27 @@ button{
     FIELDS.forEach(function(f){ if($(f)) $(f).value=''; });
   }
 
-  function sentence(cause, fix){
-    var c = cause ? '<span class="fill">'+esc(cause)+'</span>' : '<span class="fill">［一番の原因］</span>';
-    var f = fix   ? '<span class="fill">'+esc(fix)+'</span>'   : '<span class="fill">［解決策］</span>';
-    return '私は、あなたの課題の ' + c + ' を、<br>' + f + ' で解決する人。';
+  function who(){ return mode === 'A' ? val('i-person') : val('i-who'); }
+
+  function sentence(){
+    var c = val('i-cause') ? '<span class="fill">'+esc(val('i-cause'))+'</span>' : '<span class="fill">［一番の原因］</span>';
+    var f = val('i-fix')   ? '<span class="fill">'+esc(val('i-fix'))+'</span>'     : '<span class="fill">［解決策］</span>';
+    var w = val('i-why')   ? '<span class="fill">'+esc(val('i-why'))+'</span>'     : '<span class="fill">［経験］</span>';
+    return 'あなたの課題の一番の原因は、' + c + '。<br>'
+         + 'わたしは、' + f + 'で解決します。<br>'
+         + 'なぜなら私には、' + w + '経験があるから。';
+  }
+
+  function labels(){
+    $('t-issue').textContent = '2 / 5';
+    $('t-cause').textContent = '3 / 5';
+    $('t-fix').textContent   = '4 / 5';
+    $('t-why').textContent   = '5 / 5';
+
+    var p = val('i-person');
+    $('h-issue').textContent = (mode === 'A' && p)
+      ? (p + 'さんが、いま気になっていること・ちょっと直したいことは何ですか')
+      : 'その人が、いま気になっていること・ちょっと直したいことは何ですか';
   }
 
   function gate(){
@@ -252,37 +308,44 @@ button{
   }
 
   function render(){
-    ORDER.forEach(function(k){
-      var el = $('s-'+k);
-      if(el) el.classList.toggle('hidden', k !== cur);
+    SECTIONS.forEach(function(k){
+      var el = $('s-'+k); if(el) el.classList.toggle('hidden', k !== cur);
     });
-    $('prog').style.width = (ORDER.indexOf(cur) / (ORDER.length-1) * 100) + '%';
+    var seq = steps(), i = seq.indexOf(cur);
+    $('prog').style.width = (i < 0 ? 0 : i / (seq.length-1) * 100) + '%';
 
-    var html = sentence(val('i-r1-cause'), val('i-r1-fix'));
-    $('out-r1').innerHTML = html;
-    $('fin').innerHTML = html;
+    labels();
+    $('out-mid').innerHTML = sentence();
+    $('fin').innerHTML = sentence();
 
-    var box = $('finwhy'), why = val('i-r1-why');
-    if(why){
-      box.innerHTML = '<span class="lbl">そう言えるのは</span>' + esc(why);
-      box.style.display = '';
-    } else {
-      box.style.display = 'none';
-    }
+    var to = $('fin-to'), w = who();
+    if(w){ to.textContent = '（' + w + 'へ）'; to.style.display=''; }
+    else { to.style.display='none'; }
 
     gate();
     window.scrollTo(0,0);
   }
 
   window.go = function(step){ cur = step; save(); render(); };
-
-  window.nextPerson = function(){
-    if(!confirm('入力を消して、次の方とはじめますか。')) return;
-    clear(); cur = 'r1q1'; save(); render();
+  window.pick = function(m){ mode = m; cur = (m === 'A' ? 'a0' : 'b0'); save(); render(); };
+  window.goBackFromIssue = function(){ go(mode === 'A' ? 'a0' : 'b0'); };
+  window.askAgain = function(){
+    $('again-1').classList.add('hidden');
+    $('again-2').classList.remove('hidden');
+  };
+  window.cancelAgain = function(){
+    $('again-2').classList.add('hidden');
+    $('again-1').classList.remove('hidden');
+  };
+  window.again = function(){
+    clear(); mode='B'; cur='intro'; save();
+    $('again-2').classList.add('hidden');
+    $('again-1').classList.remove('hidden');
+    render();
   };
 
   document.addEventListener('input', function(e){
-    if(e.target && e.target.tagName === 'TEXTAREA'){ save(); gate(); }
+    if(e.target && e.target.tagName === 'TEXTAREA'){ save(); gate(); labels(); }
   });
 
   load();
